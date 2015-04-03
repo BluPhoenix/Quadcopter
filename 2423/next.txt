@@ -1,0 +1,16 @@
+Try this next:
+http://forum.arduino.cc/index.php?topic=54795.0
+
+According to the Nordic Datasheet the Carrier Detect is only latched on packet receive 
+		OR CE HIGH->LOW
+
+>Use CE Pin
+
+Loop:
+>CE Low
+>Select Channel
+[>reset Setup Register to PRX]
+[>Delay]
+>CE High
+>Delay
+>CE Low
