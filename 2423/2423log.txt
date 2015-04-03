@@ -1,0 +1,5164 @@
+CE ???
+mosi: 42 	 miso: 1c
+mosi: 30 	 miso: e0
+
+CE SETUP_RETR 	Retransmission Delay = 4ms
+mosi: 24 	 miso: e
+mosi: ff 	 miso: 0
+
+CE RF_CH 	Channel = 8
+mosi: 25 	 miso: e
+mosi: 8 	 miso: 0
+
+CE RF_SETUP	1 Mbps, -12dBm lna gain setup
+mosi: 26 	 miso: e
+mosi: 3 	 miso: 0
+
+CE STATUS	Clears Interrupt Flags
+mosi: 27 	 miso: e
+mosi: 70 	 miso: 0
+
+CE OBSERVE_TX	Read Only anyway
+mosi: 28 	 miso: e
+mosi: 0 	 miso: 0
+
+CE CD		Read Only anyway
+mosi: 29 	 miso: e
+mosi: 0 	 miso: 0
+
+
+Next Block: LSB of Adress for P2, P3, P4, P5
+CE 
+mosi: 2c 	 miso: e
+mosi: c3 	 miso: 0
+CE
+mosi: 2d 	 miso: e
+mosi: c4 	 miso: 0
+CE
+mosi: 2e 	 miso: e
+mosi: c5 	 miso: 0
+CE
+mosi: 2f 	 miso: e
+mosi: c6 	 miso: 0
+
+
+Next Block: RX_PW_P* for P0 - P7
+CE
+mosi: 31 	 miso: e
+mosi: 10 	 miso: 0
+CE
+mosi: 32 	 miso: e
+mosi: 10 	 miso: 0
+CE
+mosi: 33 	 miso: e
+mosi: 10 	 miso: 0
+CE
+mosi: 34 	 miso: e
+mosi: 10 	 miso: 0
+CE
+mosi: 35 	 miso: e
+mosi: 10 	 miso: 0
+CE
+mosi: 36 	 miso: e
+mosi: 10 	 miso: 0
+CE
+mosi: 37 	 miso: e
+mosi: 0 	 miso: 0
+
+
+CE RX_ADDR_P0
+mosi: 2a 	 miso: e
+mosi: 66 	 miso: 0
+mosi: 88 	 miso: 0
+mosi: 68 	 miso: 0
+mosi: 68 	 miso: 0
+mosi: 68 	 miso: 0
+
+CE RX_ADDR_P1
+mosi: 2b 	 miso: e
+mosi: 88 	 miso: 0
+mosi: 66 	 miso: 0
+mosi: 86 	 miso: 0
+mosi: 86 	 miso: 0
+mosi: 86 	 miso: 0
+
+CE TX_ADDR
+mosi: 30 	 miso: e
+mosi: 66 	 miso: 0
+mosi: 88 	 miso: 0
+mosi: 68 	 miso: 0
+mosi: 68 	 miso: 0
+mosi: 68 	 miso: 0
+
+CE STATUS (Why this way?)
+mosi: 7 	 miso: e
+mosi: 0 	 miso: e
+
+CE ACTIVATE (Toggle Register Bank)
+mosi: 50 	 miso: e
+mosi: 53 	 miso: 0
+
+Next Block: Fixed Values that have to be this way according to the datasheet
+CE 
+mosi: 20 	 miso: 8e
+mosi: 40 	 miso: 0
+mosi: 4b 	 miso: 0
+mosi: 1 	 miso: 0
+mosi: e2 	 miso: 0
+CE
+mosi: 21 	 miso: 8e
+mosi: c0 	 miso: 0
+mosi: 4b 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+CE
+mosi: 22 	 miso: 8e
+mosi: d0 	 miso: 0
+mosi: fc 	 miso: 0
+mosi: 8c 	 miso: 0
+mosi: 2 	 miso: 0
+
+Still some reserved ... now not as in the datasheet
+CE
+mosi: 23 	 miso: 8e
+mosi: f9 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 39 	 miso: 0
+mosi: 21 	 miso: 0
+CE
+mosi: 24 	 miso: 8e
+mosi: c1 	 miso: 0
+mosi: 96 	 miso: 0
+mosi: 9a 	 miso: 0
+mosi: 1b 	 miso: 0
+CE
+mosi: 25 	 miso: 8e
+mosi: 24 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: 7f 	 miso: 0
+mosi: a6 	 miso: 0
+CE
+mosi: 26 	 miso: 8e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+CE
+mosi: 27 	 miso: 8e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+CE
+mosi: 28 	 miso: 8e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+CE
+mosi: 29 	 miso: 8e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+CE
+mosi: 2a 	 miso: 8e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+CE
+mosi: 2b 	 miso: 8e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+CE
+mosi: 2c 	 miso: 8e
+mosi: 0 	 miso: 0
+mosi: 12 	 miso: 0
+mosi: 73 	 miso: 0
+mosi: 0 	 miso: 0
+CE
+mosi: 2d 	 miso: 8e
+mosi: 46 	 miso: 0
+mosi: b4 	 miso: 0
+mosi: 80 	 miso: 0
+mosi: 0 	 miso: 0
+CE
+mosi: 2e 	 miso: 8e
+mosi: 41 	 miso: 0
+mosi: 10 	 miso: 0
+mosi: 4 	 miso: 0
+mosi: 82 	 miso: 0
+mosi: 20 	 miso: 0
+mosi: 8 	 miso: 0
+mosi: 8 	 miso: 0
+mosi: f2 	 miso: 0
+mosi: 7d 	 miso: 0
+mosi: ef 	 miso: 0
+mosi: ff 	 miso: 0
+CE
+mosi: 24 	 miso: 8e
+mosi: c7 	 miso: 0
+mosi: 96 	 miso: 0
+mosi: 9a 	 miso: 0
+mosi: 1b 	 miso: 0
+CE
+mosi: 24 	 miso: 8e
+mosi: c1 	 miso: 0
+mosi: 96 	 miso: 0
+mosi: 9a 	 miso: 0
+mosi: 1b 	 miso: 0
+
+
+CE STATUS
+mosi: 7 	 miso: 8e
+mosi: 0 	 miso: 8e
+
+CE ACTIVATE (Toggle Register Bank)
+mosi: 50 	 miso: 8e
+mosi: 53 	 miso: 0
+
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: 7 	 miso: e
+mosi: 0 	 miso: e
+
+CE STATUS Clear Interrupt Flags
+mosi: 27 	 miso: e
+mosi: e 	 miso: 0
+
+CE 
+mosi: 0 	 miso: e
+mosi: 0 	 miso: c
+
+CE SETUP 	Enable CRC with 2 bytes...
+mosi: 20 	 miso: e
+mosi: c 	 miso: 0
+CE		.. do it again...
+mosi: 20 	 miso: e
+mosi: c 	 miso: 0
+
+CE SETUP	.... and power up
+mosi: 20 	 miso: e
+mosi: e 	 miso: 0
+
+CE FLUSH_TX	Wrong format uses only 1 byte
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+
+CE W_TX_PAYLOAD
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 8f 	 miso: 0
+mosi: 94 	 miso: 0
+mosi: b3 	 miso: 0
+mosi: 4e 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: 9a 	 miso: 0
+mosi: 5c 	 miso: 0
+mosi: 8a 	 miso: 0
+mosi: 17 	 miso: 0
+mosi: f6 	 miso: 0
+mosi: ff 	 miso: 0
+mosi: f7 	 miso: 0
+CE
+
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 31 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 31 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 28 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 28 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 3b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 3b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1c 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1c 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 1b 	 miso: 0
+mosi: e 	 miso: 0
+mosi: ed 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 60 	 miso: 0
+mosi: 76 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 15 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: 7 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 15 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 19 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 19 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2d 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2d 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 10 	 miso: e0
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1f 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 22 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 22 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 3a 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 3a 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 32 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 32 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 26 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: e 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 26 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 37 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 37 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 13 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 13 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 31 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 31 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: d8 	 miso: 0
+mosi: 77 	 miso: 0
+mosi: 68 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 3 	 miso: 0
+mosi: 3 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 39 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 39 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 28 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 28 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 24 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 24 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 22 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 22 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: cb 	 miso: 80
+CE
+mosi: 25 	 miso: e
+mosi: 2e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 19 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 19 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 21 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 21 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 29 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: ee 	 miso: 0
+mosi: a0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 18 	 miso: 0
+mosi: 1d 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 29 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 14 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 14 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 3 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 12 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 12 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2d 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 3 	 miso: 0
+mosi: 61 	 miso: 0
+mosi: dd 	 miso: 0
+mosi: 40 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 18 	 miso: 0
+mosi: 1d 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2d 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 1 	 miso: 0
+mosi: b0 	 miso: 0
+mosi: ee 	 miso: 0
+mosi: d0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: 7 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 18 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 18 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 27 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 27 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 39 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 39 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 28 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 30 	 miso: 0
+mosi: 3b 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 28 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 24 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 24 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 22 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 22 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: c3 	 miso: 0
+mosi: bb 	 miso: 0
+mosi: 40 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 18 	 miso: 0
+mosi: 1d 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: b0 	 miso: 0
+mosi: dd 	 miso: 0
+mosi: 40 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 18 	 miso: 0
+mosi: 1d 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 80 	 miso: 25
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 19 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 19 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 21 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 21 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 29 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 29 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 14 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 14 	 miso: 0
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 12 	 miso: 0
+CE
+mosi: e1 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 12 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2d 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2d 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 18 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 18 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 27 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 27 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 39 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 39 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 28 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 28 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 24 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 1 	 miso: 0
+mosi: 61 	 miso: 0
+mosi: bb 	 miso: 0
+mosi: 40 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 18 	 miso: 0
+mosi: 1d 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 24 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 22 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 22 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 30 	 miso: 0
+mosi: 76 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 19 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+mosi: 19 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 21 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 21 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 29 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 29 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 14 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 14 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c 	 miso: 0
+mosi: 1d 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 12 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 12 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2d 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2d 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 18 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 18 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: c3 	 miso: 0
+mosi: bb 	 miso: 0
+mosi: 40 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 18 	 miso: 0
+mosi: 1d 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 27 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 27 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: d8 	 miso: 0
+mosi: ee 	 miso: 0
+mosi: d0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: 7 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 39 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 39 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 28 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 28 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 24 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 24 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 22 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: e5 	 miso: c0
+CE
+mosi: 25 	 miso: e
+mosi: 22 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: 7 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 36 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 19 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 19 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 21 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 21 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 68 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: e 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 29 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 29 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 14 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 14 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1e 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 12 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 12 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2d 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: c3 	 miso: 0
+mosi: bb 	 miso: 0
+mosi: 40 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 18 	 miso: 0
+mosi: 1d 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 2d 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 6 	 miso: 0
+mosi: 87 	 miso: 0
+mosi: ed 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 18 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 18 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 27 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 27 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+mosi: 39 	 miso: 70
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 1b 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	 miso: 0
+CE
+mosi: 87 	 miso: 2e
+mosi: 0 	 miso: 2e
+CE
+mosi: 27 	 miso: 2e
+mosi: 2e 	 miso: 0
+CE
+mosi: 25 	 miso: e
+mosi: 39 	 miso: 0
+CE
+mosi: e1 	 miso: e
+mosi: 0 	 miso: e
+CE
+mosi: a0 	 miso: e
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 36 	 miso: 0
+mosi: 1d 	 miso: 0
+mosi: da 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: 0 	 miso: 0
+mosi: c0 	 miso: 0
+mosi: ed 	
