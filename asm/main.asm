@@ -33,10 +33,10 @@ main:
 	ldi mc2, 0x00	; m2 = C.2
 	ldi mc3, 0x00	; m3 = C.1
 	ldi mc4, 0x00	; m4 = C.0
-	ldi m1,  0x80
-	ldi m2,  0x00
-	ldi m3,  0x00
-	ldi m4,  0x00
+	ldi m1,  100
+	ldi m2,  100
+	ldi m3,  100
+	ldi m4,  100
 
 	ldi temp, (1<<PC0) + (1<<PC1) + (1<<PC2) + (1<<PC3) ; Enable pins C.0-C.3 for output
 	out DDRC, temp
@@ -65,6 +65,7 @@ main:
 	sts OCR1AL, temp
 	ldi temp, (1<<OCIE1A)
 	sts TIMSK1, temp 	; Enable Compare interrupt
+
 
 						; Init SPI
 	ldi temp, (1<<DDB4) ; MISO
@@ -134,19 +135,17 @@ Reset_Counters:
 
 
 SPI_Receive:
-	cpi m2, 0x80
-	reti
-	in temp, SPSR
-	cpi state, 0x00
-	breq selectmotor
-	dec state
+	in temp, SPDR
+	cpi temp, 0x05	; >= 5 sets the speed of the selected motor, <5 selects a motor
+	brlo selectmotor
+	
+	dec state		; Change Speed Switch
 	breq setm1
 	dec state
 	breq setm2
 	dec state
 	breq setm3
 	mov m4, temp ; else
-	ldi state, 0x00 ; assure state is reset
 	reti
 setm1:
 	mov m1, temp
