@@ -68,13 +68,18 @@ Vector3D Vector3D::operator-(const Vector3D &right)
 	return Vector3D(m_dCoords[0] - right.GetX(), m_dCoords[1] - right.GetY(), m_dCoords[2] - right.GetZ());
 }
 
-Vector3D Vector3D::operator*(const Vector3D &right)
+Vector3D Vector3D::Cross(const Vector3D left, const Vector3D right)
 {
 	Vector3D Value;
-	Value.SetX(m_dCoords[1] * right.GetZ() - m_dCoords[2] * right.GetY());
-	Value.SetY(m_dCoords[2] * right.GetX() - m_dCoords[0] * right.GetZ());
-	Value.SetZ(m_dCoords[0] * right.GetY() - m_dCoords[1] * right.GetX());
+	Value.SetX(left.GetY() * right.GetZ() - left.GetZ() * right.GetY());
+	Value.SetY(left.GetZ() * right.GetX() - left.GetX() * right.GetZ());
+	Value.SetZ(left.GetX() * right.GetY() - left.GetY() * right.GetX());
 	return Value;
+}
+
+double Vector3D::operator*(const Vector3D &right)
+{
+	return m_dCoords[0] * right.GetX() + m_dCoords[1] * right.GetY() + m_dCoords[2] * right.GetZ();
 }
 
 Vector3D Vector3D::operator*(const double &right)
@@ -95,16 +100,6 @@ Vector3D& Vector3D::operator-=(const Vector3D &right)
 	m_dCoords[0] -= right.GetX();
 	m_dCoords[1] -= right.GetY();
 	m_dCoords[2] -= right.GetZ();
-	return *this;
-}
-
-Vector3D& Vector3D::operator*=(const Vector3D &right)
-{
-	Vector3D Value;
-	Value.SetX(m_dCoords[1] * right.GetZ() - m_dCoords[2] * right.GetY());
-	Value.SetY(m_dCoords[2] * right.GetX() - m_dCoords[0] * right.GetZ());
-	Value.SetZ(m_dCoords[0] * right.GetY() - m_dCoords[1] * right.GetX());
-	*this = Value;
 	return *this;
 }
 
@@ -161,3 +156,114 @@ void Matrix3x3::SetCell(unsigned int uiRow, unsigned int uiColumn, double dValue
 {
 	m_dValues[uiRow][uiColumn] = dValue;
 }
+
+double Matrix3x3::GetCell(unsigned int uiRow, unsigned int uiColumn) const
+{
+	return m_dValues[uiRow][uiColumn];
+}
+
+void Matrix3x3::SetRow(unsigned int uiRow, Vector3D Value)
+{
+	m_dValues[uiRow][0] = Value.GetX();
+	m_dValues[uiRow][1] = Value.GetY();
+	m_dValues[uiRow][2] = Value.GetZ();
+}
+
+Vector3D Matrix3x3::GetRow(unsigned int uiRow) const
+{
+	return Vector3D(m_dValues[uiRow][0], m_dValues[uiRow][1], m_dValues[uiRow][2]); 
+}
+
+
+void Matrix3x3::SetColumn(unsigned int uiColumn, Vector3D Value)
+{
+	m_dValues[0][uiColumn] = Value.GetX();
+	m_dValues[1][uiColumn] = Value.GetY();
+	m_dValues[2][uiColumn] = Value.GetZ();
+}
+
+Vector3D Matrix3x3::GetColumn(unsigned int uiColumn) const
+{
+	return Vector3D(m_dValues[0][uiColumn], m_dValues[1][uiColumn], m_dValues[2][uiColumn]); 
+}
+
+Matrix3x3 Matrix3x3::GetTranspose() const
+{
+	return Matrix3x3(m_dValues[0][0], m_dValues[1][0], m_dValues[2][0],
+		   			 m_dValues[0][1], m_dValues[1][1], m_dValues[2][1],
+					 m_dValues[0][2], m_dValues[1][2], m_dValues[2][2]);
+}
+
+void Matrix3x3::Renormalization()
+{
+	Vector3D Xorth, Yorth, Zorth, X = GetRow(0), Y = GetRow(1);
+	double Error = X * Y;
+	Xorth = X - Y * Error;
+	Yorth = Y - X * Error;
+	Zorth = Vector3D::Cross(Xorth, Yorth);
+	// Normalize via Taylor expansion
+	Xorth = Xorth * 0.5d * (3.0d - Xorth * Xorth);
+	Yorth = Yorth * 0.5d * (3.0d - Yorth * Yorth);
+	Zorth = Zorth * 0.5d * (3.0d - Zorth * Zorth);
+	SetRow(0, Xorth);
+	SetRow(1, Yorth);
+	SetRow(2, Zorth);
+}
+
+Matrix3x3 Matrix3x3::operator*(const Matrix3x3 &right)
+{
+	Matrix3x3 ret;
+	for (unsigned int iRow = 0; iRow < 3; iRow++)
+	{
+		for (unsigned int iCol = 0; iCol < 3; iCol++)
+		{
+			ret.SetCell(iRow, iCol, this->GetRow(iRow) * right.GetColumn(iCol));
+		}
+	}
+	return ret;
+}
+
+Matrix3x3 Matrix3x3::operator*(const double &right)
+{
+	Matrix3x3 ret = *this;
+	for (unsigned int iRow = 0; iRow < 3; iRow++)
+	{
+		for (unsigned int iCol = 0; iCol < 3; iCol++)
+		{
+			ret.SetCell(iRow,iCol, right * m_dValues[iRow][iCol]);
+		}
+	}
+	return ret;
+}
+
+Vector3D Matrix3x3::operator*(const Vector3D &right)
+{
+	return Vector3D(GetRow(0) * right, GetRow(1) * right, GetRow(2) * right);
+}
+
+Matrix3x3& Matrix3x3::operator*=(const Matrix3x3 &right)
+{
+	Matrix3x3 temp;
+	for (unsigned int iRow = 0; iRow < 3; iRow++)
+	{
+		for (unsigned int iCol = 0; iCol < 3; iCol++)
+		{
+			temp.SetCell(iRow, iCol, this->GetRow(iRow) * right.GetColumn(iCol));
+		}
+	}
+	*this = temp;
+	return *this;
+}
+
+Matrix3x3& Matrix3x3::operator*=(const double &right)
+{
+	for (unsigned int iRow = 0; iRow < 3; iRow++)
+	{
+		for (unsigned int iCol = 0; iCol < 3; iCol++)
+		{
+			m_dValues[iRow][iCol] *= right;
+		}
+	}
+	return *this;
+}
+

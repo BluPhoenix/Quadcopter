@@ -24,12 +24,12 @@ class Vector3D
 
 		Vector3D operator+(const Vector3D &right);
 		Vector3D operator-(const Vector3D &right);
-		Vector3D operator*(const Vector3D &right);
+		static Vector3D Cross(const Vector3D left, const Vector3D right);
+		double operator*(const Vector3D &right);
 		Vector3D operator*(const double &right);
 
 		Vector3D& operator+=(const Vector3D &right);
 		Vector3D& operator-=(const Vector3D &right);
-		Vector3D& operator*=(const Vector3D &right);
 		Vector3D& operator*=(const double &right);
 };
 
@@ -44,20 +44,23 @@ class Matrix3x3
 		Matrix3x3(Vector3D Row1, Vector3D Row2, Vector3D Row3);
 		
 		void SetCell(unsigned int uiRow, unsigned int uiColumn, double dValue);
-		double GetCell(unsigned int uiRow, unsigned int uiColumn);
+		double GetCell(unsigned int uiRow, unsigned int uiColumn) const;
 		void SetRow(unsigned int uiRow, Vector3D Value);
-		Vector3D GetRow(unsigned int uiRow);
+		Vector3D GetRow(unsigned int uiRow) const;
 		void SetColumn(unsigned int uiColumn, Vector3D Value);
-		Vector3D GetColumn(unsigned int uiColumn);
+		Vector3D GetColumn(unsigned int uiColumn) const;
 		
-		void Normalize();
+		Matrix3x3 GetTranspose() const;
+
+		void Renormalization(); //Special function that fixes orthogonality and normality that drift off after time
+								//because of numerical integration errors.
 
 		Matrix3x3 operator*(const Matrix3x3 &right);
 		Matrix3x3 operator*(const double &right);
 		Vector3D operator*(const Vector3D &right);
 
-		Matrix3x3& operator*(const Matrix3x3 &right);
-		Matrix3x3& operator*(const double &right);
+		Matrix3x3& operator*=(const Matrix3x3 &right);
+		Matrix3x3& operator*=(const double &right);
 };
 
 #endif
