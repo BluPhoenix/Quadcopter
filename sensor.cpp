@@ -1,11 +1,14 @@
 #include "sensor.h"
 
 Sensor::Sensor()
+	: m_GyroOffset(-0.0160916, -0.0646219, 0.0111878), m_AccelOffset(0,0,0)
 {
-	if (m_iI2CFile = open("/i2c-1", O_RDWR) < 0)
+	m_iI2CFile = open("/dev/i2c-1", O_RDWR);
+	if (m_iI2CFile < 0)
 	{
 		std::cout<<"Error opening I2C Device"<<std::endl;
 	}
+	ioctl(m_iI2CFile, I2C_SLAVE, 0x68);
 	// To do initialization as in the datasheet
 	i2c_smbus_write_byte_data(m_iI2CFile, 0x6B, 0); // Power up
 }

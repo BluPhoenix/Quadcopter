@@ -1,5 +1,5 @@
-#ifndef __IMU_H__
-#define __IMU_H__
+#ifndef __SENSOR_H__
+#define __SENSOR_H__
 
 #include <iostream>
 #include <fcntl.h> // open i2c bus
