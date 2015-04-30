@@ -22,11 +22,11 @@ class Vector3D
 
 		void Normalize();
 
-		Vector3D operator+(const Vector3D &right);
-		Vector3D operator-(const Vector3D &right);
+		Vector3D operator+(const Vector3D &right) const;
+		Vector3D operator-(const Vector3D &right) const;
 		static Vector3D Cross(const Vector3D left, const Vector3D right);
-		double operator*(const Vector3D &right);
-		Vector3D operator*(const double &right);
+		double operator*(const Vector3D &right) const;
+		Vector3D operator*(const double &right) const;
 
 		Vector3D& operator+=(const Vector3D &right);
 		Vector3D& operator-=(const Vector3D &right);
@@ -55,9 +55,9 @@ class Matrix3x3
 		void Renormalization(); //Special function that fixes orthogonality and normality that drift off after time
 								//because of numerical integration errors.
 
-		Matrix3x3 operator*(const Matrix3x3 &right);
-		Matrix3x3 operator*(const double &right);
-		Vector3D operator*(const Vector3D &right);
+		Matrix3x3 operator*(const Matrix3x3 &right) const;
+		Matrix3x3 operator*(const double &right) const;
+		Vector3D operator*(const Vector3D &right) const;
 
 		Matrix3x3& operator*=(const Matrix3x3 &right);
 		Matrix3x3& operator*=(const double &right);

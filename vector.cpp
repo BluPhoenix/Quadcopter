@@ -58,12 +58,12 @@ void Vector3D::Normalize()
 	m_dCoords[2] /= dScale;
 }
 
-Vector3D Vector3D::operator+(const Vector3D &right)
+Vector3D Vector3D::operator+(const Vector3D &right) const
 {
 	return Vector3D(m_dCoords[0] + right.GetX(), m_dCoords[1] + right.GetY(), m_dCoords[2] + right.GetZ());
 }
 
-Vector3D Vector3D::operator-(const Vector3D &right)
+Vector3D Vector3D::operator-(const Vector3D &right) const
 {
 	return Vector3D(m_dCoords[0] - right.GetX(), m_dCoords[1] - right.GetY(), m_dCoords[2] - right.GetZ());
 }
@@ -77,12 +77,12 @@ Vector3D Vector3D::Cross(const Vector3D left, const Vector3D right)
 	return Value;
 }
 
-double Vector3D::operator*(const Vector3D &right)
+double Vector3D::operator*(const Vector3D &right) const
 {
 	return m_dCoords[0] * right.GetX() + m_dCoords[1] * right.GetY() + m_dCoords[2] * right.GetZ();
 }
 
-Vector3D Vector3D::operator*(const double &right)
+Vector3D Vector3D::operator*(const double &right) const
 {
 	return Vector3D(m_dCoords[0] * right, m_dCoords[1] * right, m_dCoords[2] * right);
 }
@@ -210,7 +210,7 @@ void Matrix3x3::Renormalization()
 	SetRow(2, Zorth);
 }
 
-Matrix3x3 Matrix3x3::operator*(const Matrix3x3 &right)
+Matrix3x3 Matrix3x3::operator*(const Matrix3x3 &right) const
 {
 	Matrix3x3 ret;
 	for (unsigned int iRow = 0; iRow < 3; iRow++)
@@ -223,7 +223,7 @@ Matrix3x3 Matrix3x3::operator*(const Matrix3x3 &right)
 	return ret;
 }
 
-Matrix3x3 Matrix3x3::operator*(const double &right)
+Matrix3x3 Matrix3x3::operator*(const double &right) const
 {
 	Matrix3x3 ret = *this;
 	for (unsigned int iRow = 0; iRow < 3; iRow++)
@@ -236,7 +236,7 @@ Matrix3x3 Matrix3x3::operator*(const double &right)
 	return ret;
 }
 
-Vector3D Matrix3x3::operator*(const Vector3D &right)
+Vector3D Matrix3x3::operator*(const Vector3D &right) const
 {
 	return Vector3D(GetRow(0) * right, GetRow(1) * right, GetRow(2) * right);
 }
