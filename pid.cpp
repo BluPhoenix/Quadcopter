@@ -1,7 +1,7 @@
 #include "pid.h"
 
 PID::PID(double dPFactor, double dIFactor, double dDFactor)
-	:m_dLastError(0), m_dD(0), m_dI(0), m_dP(0), m_dPFactor(dPFactor), m_dIFactor(dIFactor), m_dDFactor(dDFactor)
+	:m_dSetpoint(0), m_dLastError(0), m_dD(0), m_dI(0), m_dP(0), m_dPFactor(dPFactor), m_dIFactor(dIFactor), m_dDFactor(dDFactor)
 {
 }
 
@@ -38,4 +38,44 @@ void PID::SetPFactor(double dPFactor)
 void PID::SetSetpoint(double dSetpoint)
 {
 	m_dSetpoint = dSetpoint;
+}
+
+VectorPID::VectorPID(double dPFactor, double dIFactor, double dDFactor)
+	:m_LastError(0,0,0), m_D(0,0,0), m_I(0,0,0), m_P(0,0,0), m_dPFactor(dPFactor), m_dIFactor(dIFactor), m_dDFactor(dDFactor), m_Setpoint(0,0,0)
+{
+}
+
+void VectorPID::AddMeasurement(Vector3D Measurement, double dDeltaSeconds)
+{
+	Vector3D Error = Measurement - m_Setpoint;
+
+	m_P = Error;
+	m_I += Error * dDeltaSeconds;
+	m_D = (Error - m_LastError) *(1.0d / dDeltaSeconds);
+	m_LastError = Error;
+}
+
+Vector3D VectorPID::GetOutput()
+{
+	return m_P * m_dPFactor + m_I * m_dIFactor + m_D * m_dDFactor;
+}
+
+void VectorPID::SetDFactor(double dDFactor)
+{
+	m_dDFactor = dDFactor;
+}
+
+void VectorPID::SetIFactor(double dIFactor)
+{
+	m_dIFactor = dIFactor;
+}
+
+void VectorPID::SetPFactor(double dPFactor)
+{
+	m_dPFactor = dPFactor;
+}
+
+void VectorPID::SetSetpoint(Vector3D Setpoint)
+{
+	m_Setpoint = Setpoint;
 }
