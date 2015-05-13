@@ -1,6 +1,7 @@
 #include "imu.h"
 
 IMU::IMU()
+:m_RotCorrectionPID(0.5,0.01,0)
 {
 	int i=0,j=0;
 	m_SensorToLocal *= 0;
@@ -19,10 +20,12 @@ void IMU::SetSensorLocalRotation(Matrix3x3 Rotation)
 
 void IMU::AddGyroMeasurement(Vector3D Gyro, double dDeltaSeconds)
 {
-	Vector3D GlobalGyro = m_LocalToGlobal * m_SensorToLocal * Gyro * dDeltaSeconds;
-	m_LocalToGlobal = m_LocalToGlobal * Matrix3x3(1, -1 * GlobalGyro.GetZ(), GlobalGyro.GetY(),
-														GlobalGyro.GetZ(), 1, -1 * GlobalGyro.GetX(),
-														-1 * GlobalGyro.GetY(), GlobalGyro.GetX(), 1);
+	//Use a PI to correct the Gyro drift
+	Vector3D LocalGyro = (m_SensorToLocal * Gyro + m_RotCorrectionPID.GetOutput()) * dDeltaSeconds;
+	Matrix3x3 CombinedCross(1, LocalGyro.GetZ(),-1 * LocalGyro.GetY(),
+	 						-1 * LocalGyro.GetZ(), 1, LocalGyro.GetX(),
+							LocalGyro.GetY(), -1 * LocalGyro.GetX(), 1);   
+	m_LocalToGlobal = CombinedCross * m_LocalToGlobal;
 	m_LocalToGlobal.Renormalization();
 	std::cout<<"Delta Seconds: "<<dDeltaSeconds<<std::endl;
 	for (int i = 0; i < 3; i++)
@@ -37,9 +40,10 @@ void IMU::AddGyroMeasurement(Vector3D Gyro, double dDeltaSeconds)
 
 void IMU::AddAccelMeasurement(Vector3D Accel, double dDeltaSeconds)
 {
-	Vector3D GlobalAccel = m_SensorToLocal * m_LocalToGlobal * Accel * dDeltaSeconds;
-	m_Velocity += GlobalAccel;
-	m_Position += m_Velocity * dDeltaSeconds;
+	Vector3D LocalAccel = m_SensorToLocal * Accel * dDeltaSeconds;
+	LocalAccel.Normalize();
+	Vector3D GlobalZ = m_LocalToGlobal * Vector3D(0,0,1);
+	m_RotCorrectionPID.AddMeasurement(Vector3D::Cross(GlobalZ, LocalAccel), dDeltaSeconds);
 }
 
 double IMU::GetRoll()
