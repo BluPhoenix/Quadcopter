@@ -2,6 +2,7 @@
 #define __VECTOR_H__
 
 #include <math.h>
+#include <iostream>
 
 class Vector3D
 {
@@ -32,6 +33,8 @@ class Vector3D
 		Vector3D& operator-=(const Vector3D &right);
 		Vector3D& operator*=(const double &right);
 };
+
+std::ostream& operator<<(std::ostream& strm, const Vector3D vec);
 
 
 class Matrix3x3

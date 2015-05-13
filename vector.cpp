@@ -53,6 +53,7 @@ double Vector3D::GetLength() const
 void Vector3D::Normalize()
 {
 	double dScale = GetLength();
+	if (dScale == 0) return;
 	m_dCoords[0] /= dScale;
 	m_dCoords[1] /= dScale;
 	m_dCoords[2] /= dScale;
@@ -109,6 +110,12 @@ Vector3D& Vector3D::operator*=(const double &right)
 	m_dCoords[1] *= right;
 	m_dCoords[2] *= right;
 	return *this;
+}
+
+std::ostream& operator<<(std::ostream& strm, const Vector3D vec)
+{
+	strm << "X: "<<vec.GetX()<<"\tY: "<<vec.GetY()<<"\tZ: "<<vec.GetZ()<<std::endl;
+	return strm;
 }
 
 
