@@ -41,13 +41,13 @@ Vector3D Sensor::GetAccel()
 	union { char Bytes[2]; short iValue; } Data;
 	Data.Bytes[0] = i2c_smbus_read_byte_data(m_iI2CFile, 0x3C);
 	Data.Bytes[1] = i2c_smbus_read_byte_data(m_iI2CFile, 0x3B);
-	ret.SetX((1/ ACCEL_LSB_PER_G) * Data.iValue);
+	ret.SetX((1.0d/ ACCEL_LSB_PER_G) * Data.iValue);
 	Data.Bytes[0] = i2c_smbus_read_byte_data(m_iI2CFile, 0x3E);
 	Data.Bytes[1] = i2c_smbus_read_byte_data(m_iI2CFile, 0x3D);
-	ret.SetY((1 / ACCEL_LSB_PER_G) * Data.iValue);
+	ret.SetY((1.0d / ACCEL_LSB_PER_G) * Data.iValue);
 	Data.Bytes[0] = i2c_smbus_read_byte_data(m_iI2CFile, 0x40);
 	Data.Bytes[1] = i2c_smbus_read_byte_data(m_iI2CFile, 0x3F);
-	ret.SetZ((1 / ACCEL_LSB_PER_G) * Data.iValue);
+	ret.SetZ((1.0d / ACCEL_LSB_PER_G) * Data.iValue);
 	ret += m_AccelOffset;
 	return ret;
 }
