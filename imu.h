@@ -9,7 +9,7 @@
 
 class IMU
 {
-	public:
+	private:
 		struct timespec m_GyroTS, m_AccelTS;
 		Vector3D m_Position, m_Velocity;
 		Matrix3x3 m_LocalToGlobal;
