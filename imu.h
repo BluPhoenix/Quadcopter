@@ -11,7 +11,7 @@
 
 class IMU
 {
-	public:
+	private:
 		Vector3D m_Position, m_Velocity;
 		Matrix3x3 m_LocalToGlobal;
 		Matrix3x3 m_SensorToLocal;

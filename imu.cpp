@@ -61,5 +61,9 @@ double IMU::GetYaw()
 	Vector3D GlobalDirection = m_LocalToGlobal * Vector3D(1,0,0);
 	GlobalDirection.SetZ(0);
 	GlobalDirection.Normalize();
-	return asin(Vector3D::Cross(GlobalDirection, Vector3D(1,0,0)).GetLength());
+	if (Vector3D(1,0,0) * GlobalDirection > 0)
+		return asin(Vector3D::Cross(GlobalDirection, Vector3D(1,0,0)) * Vector3D(0,0,1));
+	double temp = PI - asin(Vector3D::Cross(GlobalDirection, Vector3D(1,0,0)) * Vector3D(0,0,1));
+	if (temp > PI) temp -= 2 * PI;
+	return temp;
 }
