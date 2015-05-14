@@ -1,7 +1,7 @@
 #include "imu.h"
 
 IMU::IMU()
-:m_RotCorrectionPID(0.5,0.01,0)
+:m_RotCorrectionPID(IMU_CORRECTION_PROPORTIONAL,IMU_CORRECTION_INTEGRAL,IMU_CORRECTION_DERIVATE)
 {
 	int i=0,j=0;
 	m_SensorToLocal *= 0;

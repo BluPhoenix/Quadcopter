@@ -1,7 +1,7 @@
 #include "sensor.h"
 
 Sensor::Sensor()
-	: m_GyroOffset(-0.0160916, -0.0646219, 0.0111878), m_AccelOffset(0,0,0)
+	: m_GyroOffset(GYRO_OFFSET), m_AccelOffset(ACCEL_OFFSET)
 {
 	m_iI2CFile = open("/dev/i2c-1", O_RDWR);
 	if (m_iI2CFile < 0)

@@ -1,0 +1,16 @@
+#ifndef __CONFIG_H__
+#define __CONFIG_H__
+
+#define PI 3.14159265359
+
+// Sensor Settings
+#define GYRO_LSB_PER_DEGS 131
+#define ACCEL_LSB_PER_G 16384
+#define ACCEL_OFFSET 0, 0, 0
+#define GYRO_OFFSET -0.0160916, -0.0646219, 0.0111878
+
+#define IMU_CORRECTION_PROPORTIONAL 0.5
+#define IMU_CORRECTION_INTEGRAL		0.01
+#define IMU_CORRECTION_DERIVATE 	0
+
+#endif //__CONFIG_H__

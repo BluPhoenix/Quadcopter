@@ -1,0 +1,6 @@
+test/
+test.cpp
+*.hex
+*.elf
+*.cof
+*.obj

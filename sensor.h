@@ -5,11 +5,10 @@
 #include <fcntl.h> // open i2c bus
 #include <unistd.h>
 #include <linux/i2c-dev.h>
-#include "vector.h"
 
-#define GYRO_LSB_PER_DEGS 131
-#define ACCEL_LSB_PER_G 16384
-#define PI 3.14159
+#include "config.h"
+
+#include "vector.h"
 
 class Sensor
 {
