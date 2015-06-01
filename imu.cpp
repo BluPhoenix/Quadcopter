@@ -11,6 +11,10 @@ IMU::IMU()
 		m_LocalToGlobal.SetCell(i,j,1);
 		j++;
 	}
+	for (i = 0; i < GYRO_SMOOTHING; i++)
+	{
+		m_GyroList.push_front(Vector3D(0,0,0));
+	}
 }
 
 void IMU::SetSensorLocalRotation(Matrix3x3 Rotation)
@@ -20,6 +24,11 @@ void IMU::SetSensorLocalRotation(Matrix3x3 Rotation)
 
 void IMU::AddGyroMeasurement(Vector3D Gyro, double dDeltaSeconds)
 {
+	// Add new Vector to Smooting queue
+	m_GyroList.pop_back();
+	m_GyroList.push_front(Gyro);
+
+
 	//Use a PI to correct the Gyro drift
 	Vector3D LocalGyro = (m_SensorToLocal * Gyro + m_RotCorrectionPID.GetOutput()) * dDeltaSeconds;
 	Matrix3x3 CombinedCross(1, LocalGyro.GetZ(),-1 * LocalGyro.GetY(),
@@ -66,4 +75,14 @@ double IMU::GetYaw()
 	double temp = PI - asin(Vector3D::Cross(GlobalDirection, Vector3D(1,0,0)) * Vector3D(0,0,1));
 	if (temp > PI) temp -= 2 * PI;
 	return temp;
+}
+
+Vector3D IMU::GetGyro()
+{
+	Vector3D ret(0,0,0);
+	for (std::list<Vector3D>::iterator it = m_GyroList.begin(); it != m_GyroList.end(); it++)
+	{
+		ret += *it;
+	}
+	return ret * (1.0d / GYRO_SMOOTHING);
 }

@@ -3,11 +3,14 @@
 
 #include <iostream>
 #include <cmath>
+#include <list>
 
 #include "config.h"
 
 #include "vector.h"
 #include "pid.h"
+
+#define GYRO_SMOOTHING 5
 
 class IMU
 {
@@ -16,6 +19,7 @@ class IMU
 		Matrix3x3 m_LocalToGlobal;
 		Matrix3x3 m_SensorToLocal;
 		VectorPID m_RotCorrectionPID;
+		std::list<Vector3D> m_GyroList;
 	public:
 		IMU();
 		void SetSensorLocalRotation(Matrix3x3 Rotation);
@@ -26,6 +30,7 @@ class IMU
 		double GetYaw();
 		Vector3D GetVelocity() { return m_Velocity; }
 		Vector3D GetPosition() { return m_Position; }
+		Vector3D GetGyro();
 };
 
 #endif
