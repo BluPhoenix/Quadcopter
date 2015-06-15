@@ -52,19 +52,22 @@ void IMU::AddAccelMeasurement(Vector3D Accel, double dDeltaSeconds)
 	Vector3D LocalAccel = m_SensorToLocal * Accel * dDeltaSeconds;
 	LocalAccel.Normalize();
 	Vector3D GlobalZ = m_LocalToGlobal * Vector3D(0,0,1);
-	m_RotCorrectionPID.AddMeasurement(Vector3D::Cross(GlobalZ, LocalAccel), dDeltaSeconds);
+	m_RotCorrectionPID.AddMeasurement(Vector3D::Cross(LocalAccel, GlobalZ), dDeltaSeconds);
 }
 
+// Positive Roll = X-Axis pointing down
 double IMU::GetRoll()
-{
+{	
 	return asin((m_LocalToGlobal * Vector3D(0,1,0)) * Vector3D(0,0,1));
 }
 
+// Positive Pitch = Y-Axis pointing down
 double IMU::GetPitch()
 {
 	return asin((m_LocalToGlobal * Vector3D(1,0,0)) * Vector3D(0,0,1));
 }
 
+// Positive Yaw = X-Axis pointing Left
 double IMU::GetYaw()
 {
 	Vector3D GlobalDirection = m_LocalToGlobal * Vector3D(1,0,0);

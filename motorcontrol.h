@@ -3,10 +3,12 @@
 
 #include "spi.h"
 #include <iostream>
+#include "config.h"
 
 class MotorControl
 {
 	private:
+		bool m_bStarted;
 		double m_dMotorSpeeds[4];
 		Spi *m_pSpidev;
 	public:
@@ -14,7 +16,8 @@ class MotorControl
 		~MotorControl();
 		void SetSpeed(unsigned int uiMotor, double dSpeed);
 		double GetSpeed(unsigned int uiMotor);
-		void AddSpeed(unsigned int uiMotor, double dDeltaSpeed);
+		void Start();
+		void Stop();
 };
 
 

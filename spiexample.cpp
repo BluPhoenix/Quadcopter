@@ -2,7 +2,7 @@
 #include <unistd.h>
 int main()
 {
-	Spi *CS0 = new Spi(0, 500000, true, true, false);
+	Spi *CS0 = new Spi(0, 250000, true, true, false);
 	unsigned char buf[10];
 while (true)
 {
