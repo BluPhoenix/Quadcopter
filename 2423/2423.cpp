@@ -1,4 +1,43 @@
 #include "spi.h"
+#include <fcntl.h>
+#include <stdio.h>
+#include <unistd.h>
+
+#define CE_PIN 5
+
+void Set_CE()
+{
+	char buf[100];
+	int bytes = sprintf(buf, "/sys/class/gpio/gpio%d/value", CE_PIN);
+	int fd = open(buf, O_WRONLY);
+	if (fd < 0)
+	{
+		printf("Error setting ce\n");
+		return;
+	}
+	int res = write(fd, "1", 1);
+	if (res < 0)
+	{
+		printf("Error writing to ce");
+	}
+}
+
+void Reset_CE()
+{
+	char buf[100];
+	int bytes = sprintf(buf, "/sys/class/gpio/gpio%d/value", CE_PIN);
+	int fd = open(buf, O_WRONLY);
+	if (fd < 0)
+	{
+		printf("Error resetting ce\n");
+		return;
+	}
+	int res = write(fd, "0", 1);
+	if (res < 0)
+	{
+		printf("Error writing to ce");
+	}
+}
 
 void InitChip(Spi *s)
 {
@@ -208,12 +247,46 @@ void InitChip(Spi *s)
 	s->Transfer(buf, 2);
 }
 
+
+
 int main()
 {
 	Spi *CS0 = new Spi(0, 1000000, false, false);
-	unsigned char buf[17];
+	unsigned char buf[100];
 	InitChip(CS0);
 	int i = 0;
+	// init gpio pin for CE
+	int fd = open("/sys/class/gpio/export", O_WRONLY);
+	if (fd < 0)
+	{
+		printf("Error, could not open /sys/class/gpio/export");
+		return -1;
+	}
+	int bytes = sprintf((char*)buf, "%d", CE_PIN);
+	int res = write(fd, buf, bytes);
+	if (res < 0)
+	{
+		printf("Error, could not write to /sys/class/gpio/export");
+		return -1;
+	}
+	close(fd);
+
+	//Init gpio pin direction
+	bytes = sprintf((char*)buf, "/sys/class/gpio/gpio%d/direction", CE_PIN);
+	fd = open((char*)buf, O_WRONLY);
+	if (fd < 0)
+	{
+		printf("Error opening pin/direction");
+		return -1;
+	}
+	res = write(fd, "out", 3);
+	if (res < 0)
+	{
+		printf("Error writing to pin/direction");
+		return -1;
+	}
+	close(fd);
+
 	while (true)
 	{
 //		do
