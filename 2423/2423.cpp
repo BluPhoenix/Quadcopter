@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#define CE_PIN 5
+#define CE_PIN 225
 
 void Set_CE()
 {
@@ -253,8 +253,8 @@ int main()
 {
 	Spi *CS0 = new Spi(0, 1000000, false, false);
 	unsigned char buf[100];
-	InitChip(CS0);
 	int i = 0;
+	
 	// init gpio pin for CE
 	int fd = open("/sys/class/gpio/export", O_WRONLY);
 	if (fd < 0)
@@ -287,6 +287,10 @@ int main()
 	}
 	close(fd);
 
+	Set_CE();
+	usleep(1000);
+	InitChip(CS0);
+	usleep(1000);
 	while (true)
 	{
 //		do
@@ -309,7 +313,11 @@ int main()
 		buf[0] = 0x25;
 		buf[1] = i;
 		CS0->Transfer(buf, 2);
-		for (int j = 0; j < 1000; j++)
+		usleep(10000);
+		Reset_CE();
+		usleep(10000);
+
+		for (int j = 0; j < 10; j++)
 		{
 			buf[0] = 0x09;
 			buf[1] = 0x00;
@@ -319,6 +327,13 @@ int main()
 		}
 		i++;
 		i = i % 128;
+
+		Set_CE();
+		usleep(10000);
+		buf[0] = 0x20; // SETUP
+		buf[1] = 0x0F; // Power Up etc.
+		CS0->Transfer(buf, 2);
+		usleep(10000);
 	}
 	return 0;
 }
