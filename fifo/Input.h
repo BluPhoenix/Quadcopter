@@ -6,14 +6,19 @@
 #include <sys/stat.h>
 
 
+#define YAW_FACTOR 1
+#define PITCH_FACTOR 1
+#define ROLL_FACTOR 1
+
+
 class InputParser
 {
 	public:
 		struct Coord
 		{
-			union {unsigned int X; char byX[4]; };
-			union {unsigned int Y; char byY[4]; };
-			union {unsigned int Z; char byZ[4]; };
+			union {int X; char byX[4]; };
+			union {int Y; char byY[4]; };
+			union {int Z; char byZ[4]; };
 		};
 
 		InputParser();
@@ -42,8 +47,8 @@ class Input
 		Input();
 		~Input();
 		void Receive();
-		unsigned int GetPitch();
-		unsigned int GetRoll();
-		unsigned int GetYaw();
-		unsigned int GetThrottle();
+		float GetPitch();
+		float GetRoll();
+		float GetYaw();
+		float GetThrottle();
 };

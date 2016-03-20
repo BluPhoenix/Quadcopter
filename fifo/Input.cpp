@@ -1,4 +1,5 @@
 #include "Input.h"
+#include <errno.h>
 
 InputParser::InputParser()
 {
@@ -108,6 +109,7 @@ bool InputParser::PutChar(char Input)
 Input::Input()
 {
 	unlink("/tmp/ctl_fifo");
+	umask(0);
 	if (mkfifo("/tmp/ctl_fifo", 0666) == -1)
 	{
 		throw "Could not create FIFO";
@@ -117,6 +119,7 @@ Input::Input()
 	{
 		throw "Could not open FIFO";
 	}
+	umask(022);
 }
 
 Input::~Input()
@@ -138,26 +141,27 @@ void Input::Receive()
 	}
 	if (recv < 0)
 	{
-		throw "Error While Reading";
+		if (errno != EAGAIN) throw "Error While Reading";
 	}
 }
 
-unsigned int Input::GetPitch()
+float Input::GetPitch()
 {
-	return m_Parser.GetLastCoord().X;
+	return m_Parser.GetLastCoord().X * PITCH_FACTOR;
 }
 
-unsigned int Input::GetRoll()
+float Input::GetRoll()
 {
-	return m_Parser.GetLastCoord().Y;
+	return m_Parser.GetLastCoord().Y * ROLL_FACTOR;
 }
 
-unsigned int Input::GetYaw()
+float Input::GetYaw()
 {
-	return m_Parser.GetLastCoord().Z;
+	return m_Parser.GetLastCoord().Z * YAW_FACTOR;
 }
 
-unsigned int Input::GetThrottle()
+float Input::GetThrottle()
 {
+	if (m_Parser.GetLastThrottle() > 100) return 100;
 	return m_Parser.GetLastThrottle();
 }
