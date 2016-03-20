@@ -43,7 +43,7 @@ void PID::SetSetpoint(double dSetpoint)
 
 double PID::GetPOutput()
 {
-	return m_dP * m_dpFactor;
+	return m_dP * m_dPFactor;
 }
 
 double PID::GetIOutput()

@@ -8,8 +8,7 @@ DEPS=imu.h \
 	 sensor.h \
 	 spi.h \
 	 vector.h \
-	 fifo/Input.h \
-	 fifo/cgi.cpp
+	 fifo/Input.h 
 
 _OBJ=imu.o \
 	motorcontrol.o \
@@ -17,8 +16,7 @@ _OBJ=imu.o \
 	sensor.o \
 	spi.o \
 	vector.o \
-	fifo/Input.o \
-	fifo/cgi.o
+	fifo/Input.o 
 
 OBJ=$(patsubst %, $(BDIR)/%, $(_OBJ))
 

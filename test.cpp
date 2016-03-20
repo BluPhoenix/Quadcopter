@@ -32,6 +32,7 @@ int main()
 	PID YawPos(ARC_YAW_PROPORTIONAL, ARC_YAW_INTEGRAL, ARC_YAW_DERIVATE);
 	
 	double dThrottle = 0;
+	double dPitch = 0;
 	MotorControl Motors;
 	sleep(1);
 	Motors.Start();
@@ -51,6 +52,7 @@ int main()
 		{
 			in.Receive();
 			dThrottle = in.GetThrottle();
+			dPitch = in.GetPitch();
 		}
 		catch(const char* s)
 		{
@@ -70,6 +72,7 @@ int main()
 		//std::cout<<accel;
 		//std::cout<<"Yaw: "<<imu.GetYaw()<<"\tPitch: "<<imu.GetPitch()<<"\tRoll: "<<imu.GetRoll()<<std::endl;
 		Vector3D FilteredGyr = imu.GetGyro();
+		PitchPos.SetSetpoint(dPitch);
 		PitchPos.AddMeasurement(imu.GetPitch(), dDeltaTime);
 		PitchRate.SetSetpoint(PitchPos.GetOutput());
 		PitchRate.AddMeasurement(FilteredGyr.GetY(), dDeltaTime);
@@ -83,10 +86,13 @@ int main()
 		//Motors.SetSpeed(3, dThrottle + PitchRate.GetOutput());
 		
 		// Logging to Stderr
-		// Throttle	Pitch	Roll	Yaw	[PitchPos-PID]	[RollPos-PID]	[YawPos-PID]
+		// Throttle	Pitch	Roll	Yaw	[Actual P R Y]	[PitchPos-PID]	[RollPos-PID]	[YawPos-PID]
 		// [PitchRate-PID]	[RollRate-PID]	[YawRate-PID]	[Motors]
 		
-		std::cerr<<dThrottle<<"\t"<<imu.GetPitch()<<"\t"<<imu.GetRoll()<<"\t"<<imu.GetYaw()<<"\t";
+		std::cerr<<dThrottle<<"\t"<<dPitch<<"\t0\t0\t";
+		
+		// Actual Pitch Roll Yaw
+		std::cerr<<imu.GetPitch()<<"\t"<<imu.GetRoll()<<"\t"<<imu.GetYaw()<<"\t";
 		
 		// Pos PIDs
 		// [PitchPos-PID]: P-Output	I-Output	D-Output	Output
