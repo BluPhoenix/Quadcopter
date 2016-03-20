@@ -1,0 +1,4 @@
+cgi.cpp compiles to cgi.bin that goes into /usr/lib/cgi-bin/
+script.html goes into /var/www/
+
+apache has to be running
