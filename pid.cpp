@@ -40,6 +40,22 @@ void PID::SetSetpoint(double dSetpoint)
 	m_dSetpoint = dSetpoint;
 }
 
+
+double PID::GetPOutput()
+{
+	return m_dP * m_dpFactor;
+}
+
+double PID::GetIOutput()
+{
+	return m_dI * m_dIFactor;
+}
+
+double PID::GetDOutput()
+{
+	return m_dD * m_dDFactor;
+}
+
 VectorPID::VectorPID(double dPFactor, double dIFactor, double dDFactor)
 	:m_LastError(0,0,0), m_D(0,0,0), m_I(0,0,0), m_P(0,0,0), m_dPFactor(dPFactor), m_dIFactor(dIFactor), m_dDFactor(dDFactor), m_Setpoint(0,0,0)
 {

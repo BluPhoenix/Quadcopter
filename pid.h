@@ -15,6 +15,11 @@ class PID
 		void SetIFactor(double dI);
 		void SetDFactor(double dD);
 		void SetSetpoint(double dSetpoint);
+
+		// For Debug and logging
+		double GetPOutput();
+		double GetIOutput();
+		double GetDOutput();
 };
 
 class VectorPID

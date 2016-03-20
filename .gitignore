@@ -1,6 +1,5 @@
 test/
 build/
-test.cpp
 *.hex
 *.elf
 *.cof
