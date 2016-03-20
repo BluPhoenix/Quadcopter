@@ -17,7 +17,7 @@
 // Rotation Rate Control PIDs
 
 #define RRC_PITCH_PROPORTIONAL  10
-#define RRC_PITCH_INTEGRAL		3
+#define RRC_PITCH_INTEGRAL		0
 #define RRC_PITCH_DERIVATE		0
 
 #define RRC_ROLL_PROPORTIONAL	0

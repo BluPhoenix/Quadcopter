@@ -44,7 +44,7 @@ void MotorControl::SetSpeed(unsigned int uiMotor, double dSpeed)
 	}
 	unsigned char buf[2];
 	buf[0] = uiMotor ^ 0xFF;
-	buf[1] = 100 + MOTOR_SPEED_BIAS + (200 - MOTOR_SPEED_BIAS) * dSpeed / 100;
+	buf[1] = 100 + MOTOR_SPEED_BIAS + (100 - MOTOR_SPEED_BIAS) * dSpeed / 100;
 	buf[1] ^= 0xFF;
 	m_pSpidev->Transfer(buf, 2);
 	m_dMotorSpeeds[uiMotor - 1] = dSpeed;
