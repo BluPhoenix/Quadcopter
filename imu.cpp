@@ -24,13 +24,17 @@ void IMU::SetSensorLocalRotation(Matrix3x3 Rotation)
 
 void IMU::AddGyroMeasurement(Vector3D Gyro, double dDeltaSeconds)
 {
-	// Add new Vector to Smooting queue
-	m_GyroList.pop_back();
-	m_GyroList.push_front(Gyro);
 
 
 	//Use a PI to correct the Gyro drift
-	Vector3D LocalGyro = (m_SensorToLocal * Gyro + m_RotCorrectionPID.GetOutput()) * dDeltaSeconds;
+	Vector3D LocalGyro = (m_SensorToLocal * Gyro + m_RotCorrectionPID.GetOutput());
+
+	// Add new Vector to Smooting queue
+	m_GyroList.pop_back();
+	m_GyroList.push_front(LocalGyro);
+
+	LocalGyro = LocalGyro * dDeltaSeconds;
+
 	Matrix3x3 CombinedCross(1, LocalGyro.GetZ(),-1 * LocalGyro.GetY(),
 	 						-1 * LocalGyro.GetZ(), 1, LocalGyro.GetX(),
 							LocalGyro.GetY(), -1 * LocalGyro.GetX(), 1);   

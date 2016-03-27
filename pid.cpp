@@ -7,7 +7,7 @@ PID::PID(double dPFactor, double dIFactor, double dDFactor)
 
 void PID::AddMeasurement(double dMeasurement, double dDeltaSeconds)
 {
-	double dError = dMeasurement - m_dSetpoint;
+	double dError = m_dSetpoint - dMeasurement;
 
 	m_dP = dError;
 	m_dI += dError * dDeltaSeconds;
@@ -63,7 +63,7 @@ VectorPID::VectorPID(double dPFactor, double dIFactor, double dDFactor)
 
 void VectorPID::AddMeasurement(Vector3D Measurement, double dDeltaSeconds)
 {
-	Vector3D Error = Measurement - m_Setpoint;
+	Vector3D Error = m_Setpoint - Measurement;
 
 	m_P = Error;
 	m_I += Error * dDeltaSeconds;
