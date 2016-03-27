@@ -27,7 +27,7 @@ void IMU::AddGyroMeasurement(Vector3D Gyro, double dDeltaSeconds)
 
 
 	//Use a PI to correct the Gyro drift
-	Vector3D LocalGyro = (m_SensorToLocal * Gyro + m_RotCorrectionPID.GetOutput());
+	Vector3D LocalGyro = (m_SensorToLocal * Gyro - m_RotCorrectionPID.GetOutput());
 
 	// Add new Vector to Smooting queue
 	m_GyroList.pop_back();
