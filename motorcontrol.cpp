@@ -64,10 +64,12 @@ double MotorControl::GetSpeed(unsigned int uiMotor)
 void MotorControl::Start()
 {
 	m_bStarted = true;
-	for (int i = 1; i < 5; i++)
+	/*for (int i = 1; i < 5; i++)
 	{
 		SetSpeed(i,0);
-	}
+	}*/
+	SetSpeed(1,0);
+	SetSpeed(3,0);
 }
 
 void MotorControl::Stop()

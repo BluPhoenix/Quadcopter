@@ -51,8 +51,8 @@ int main()
 		try
 		{
 			in.Receive();
-			dThrottle = in.GetThrottle();
-			dPitch = in.GetPitch() / 180 * 3.1415;
+			dThrottle = 40;//in.GetThrottle();
+			dPitch = (in.GetThrottle())/100 * 3.1415;//GetPitch() / 180 * 3.1415;
 		}
 		catch(const char* s)
 		{
@@ -73,20 +73,24 @@ int main()
 		std::cout<<"Yaw: "<<imu.GetYaw()<<"\tPitch: "<<imu.GetPitch()<<"\tRoll: "<<imu.GetRoll()<<std::endl;
 
 		Vector3D FilteredGyr = imu.GetGyro();
+		std::cout<<"PitchRate:"<<FilteredGyr.GetY()<<"\tRollRate:"<<FilteredGyr.GetX()<<std::endl;
 		PitchPos.SetSetpoint(dPitch);
 		PitchPos.AddMeasurement(imu.GetPitch(), dDeltaTime);
-		PitchRate.SetSetpoint(PitchPos.GetOutput());
+		//PitchRate.SetSetpoint(PitchPos.GetOutput());
+		PitchRate.SetSetpoint(dPitch);
 		PitchRate.AddMeasurement(FilteredGyr.GetY(), dDeltaTime);
 
 		std::cout<<"PitchPotOutput:"<<PitchPos.GetOutput()<<std::endl;
 		std::cout<<"Motor1:"<<dThrottle - PitchRate.GetOutput()<<std::endl;
-		std::cout<<"Motor2:"<<dThrottle + PitchRate.GetOutput()<<std::endl;
+		std::cout<<"Motor3:"<<dThrottle + PitchRate.GetOutput()<<std::endl;
 
 		// Motor 1.speed = throttle - PitchRate.GetOutput()
 		// Motor 3.speed = throttle + PitchRate.GetOutput()
 		Motors.SetSpeed(1, dThrottle - PitchRate.GetOutput());
 		Motors.SetSpeed(3, dThrottle + PitchRate.GetOutput());
-		
+
+		std::cerr<<dThrottle<<"\t"<<imu.GetPitch()<<"\t"<<FilteredGyr.GetY()<<"\t"<<PitchRate.GetOutput()<<"\t"<<dThrottle - PitchRate.GetOutput()<<std::endl;
+		/*
 		// Logging to Stderr
 		// Throttle	Pitch	Roll	Yaw	[Actual P R Y]	[PitchPos-PID]	[RollPos-PID]	[YawPos-PID]
 		// [PitchRate-PID]	[RollRate-PID]	[YawRate-PID]	[Motors]
@@ -120,7 +124,12 @@ int main()
 
 		// [Motors]: Motor1	Motor2	Motor3	Motor4
 		std::cerr<<dThrottle - PitchRate.GetOutput()<<"\t0\t"<<dThrottle + PitchRate.GetOutput();
-		std::cerr<<std::endl;
+		std::cerr<<"\t";
+
+		// PitchRate:
+		std::cerr<<FilteredGyr.GetY()<<std::endl;
+		*/
+		
 		usleep(20000);
 	}
 	Motors.Stop();
