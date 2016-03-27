@@ -8,7 +8,7 @@ DEPS=imu.h \
 	 sensor.h \
 	 spi.h \
 	 vector.h \
-	 fifo/Input.h 
+	 fifo/Input.h
 
 _OBJ=imu.o \
 	motorcontrol.o \

@@ -46,21 +46,20 @@ int main()
 
 	//Input from CGI script
 	Input in;
-	while (getchar() == EOF)
+	while (getchar() == EOF) // Enter to exit
 	{
 		try
 		{
 			in.Receive();
 			dThrottle = in.GetThrottle();
-			dPitch = in.GetPitch();
+			dPitch = in.GetPitch() / 180 * 3.1415;
 		}
 		catch(const char* s)
 		{
 			std::cout<<s<<std::endl;
 			sleep(3);
 		}
-		std::cout<<dThrottle<<std::endl;
-		//std::cout << "\033[2J\033[1;1H"; // Escape code to clear screen.
+		std::cout << "\033[2J\033[1;1H"; // Escape code to clear screen.
 		clock_gettime(CLOCK_MONOTONIC, &ts);
 		double dDeltaTime = ts.tv_sec - lastts.tv_sec + 0.000000001 * (ts.tv_nsec - lastts.tv_nsec);
 		dTotalTime += dDeltaTime;
@@ -69,21 +68,24 @@ int main()
 		imu.AddGyroMeasurement(gyr, dDeltaTime);
 		imu.AddAccelMeasurement(accel, dDeltaTime);
 		lastts = ts;
-		//std::cout<<accel;
-		//std::cout<<"Yaw: "<<imu.GetYaw()<<"\tPitch: "<<imu.GetPitch()<<"\tRoll: "<<imu.GetRoll()<<std::endl;
+
+		std::cout<<"RemThrottle:"<<dThrottle<<"\tRemPitch:"<<dPitch<<std::endl;
+		std::cout<<"Yaw: "<<imu.GetYaw()<<"\tPitch: "<<imu.GetPitch()<<"\tRoll: "<<imu.GetRoll()<<std::endl;
+
 		Vector3D FilteredGyr = imu.GetGyro();
 		PitchPos.SetSetpoint(dPitch);
 		PitchPos.AddMeasurement(imu.GetPitch(), dDeltaTime);
 		PitchRate.SetSetpoint(PitchPos.GetOutput());
 		PitchRate.AddMeasurement(FilteredGyr.GetY(), dDeltaTime);
-		std::cout<<PitchPos.GetOutput()<<std::endl;
-		std::cout<<dThrottle - PitchRate.GetOutput()<<std::endl;
-		std::cout<<dThrottle + PitchRate.GetOutput()<<std::endl;
+
+		std::cout<<"PitchPotOutput:"<<PitchPos.GetOutput()<<std::endl;
+		std::cout<<"Motor1:"<<dThrottle - PitchRate.GetOutput()<<std::endl;
+		std::cout<<"Motor2:"<<dThrottle + PitchRate.GetOutput()<<std::endl;
 
 		// Motor 1.speed = throttle - PitchRate.GetOutput()
 		// Motor 3.speed = throttle + PitchRate.GetOutput()
-		//Motors.SetSpeed(1, dThrottle - PitchRate.GetOutput());
-		//Motors.SetSpeed(3, dThrottle + PitchRate.GetOutput());
+		Motors.SetSpeed(1, dThrottle - PitchRate.GetOutput());
+		Motors.SetSpeed(3, dThrottle + PitchRate.GetOutput());
 		
 		// Logging to Stderr
 		// Throttle	Pitch	Roll	Yaw	[Actual P R Y]	[PitchPos-PID]	[RollPos-PID]	[YawPos-PID]

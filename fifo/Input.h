@@ -6,9 +6,9 @@
 #include <sys/stat.h>
 
 
-#define YAW_FACTOR 1
-#define PITCH_FACTOR 1
-#define ROLL_FACTOR 1
+#define YAW_FACTOR 3.1415/180
+#define PITCH_FACTOR 3.1415/180
+#define ROLL_FACTOR 3.1415/180
 
 
 class InputParser
