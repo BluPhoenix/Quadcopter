@@ -23,9 +23,9 @@ int main()
 	clock_gettime(CLOCK_MONOTONIC, &lastts);
 	double dTotalTime = 0;
 
-	PID PitchRate(RRC_PITCH_PROPORTIONAL, RRC_PITCH_INTEGRAL, RRC_PITCH_DERIVATE);
+	/*PID PitchRate(RRC_PITCH_PROPORTIONAL, RRC_PITCH_INTEGRAL, RRC_PITCH_DERIVATE);
 	PID RollRate(RRC_ROLL_PROPORTIONAL, RRC_ROLL_INTEGRAL, RRC_ROLL_DERIVATE);
-	PID YawRate(RRC_YAW_PROPORTIONAL, RRC_YAW_INTEGRAL, RRC_YAW_DERIVATE);
+	PID YawRate(RRC_YAW_PROPORTIONAL, RRC_YAW_INTEGRAL, RRC_YAW_DERIVATE);*/
 
 	PID PitchPos(ARC_PITCH_PROPORTIONAL, ARC_PITCH_INTEGRAL, ARC_PITCH_DERIVATE);
 	PID RollPos(ARC_ROLL_PROPORTIONAL, ARC_ROLL_INTEGRAL, ARC_ROLL_DERIVATE);
@@ -52,7 +52,8 @@ int main()
 		{
 			in.Receive();
 			dThrottle = 40;//in.GetThrottle();
-			dPitch = (in.GetThrottle())/100 * 3.1415;//GetPitch() / 180 * 3.1415;
+			//dPitch = (in.GetThrottle())/100 * 3.1415;//GetPitch() / 180 * 3.1415;
+			PitchPos.SetPFactor(in.GetThrottle()/10);
 		}
 		catch(const char* s)
 		{
@@ -77,19 +78,19 @@ int main()
 		PitchPos.SetSetpoint(dPitch);
 		PitchPos.AddMeasurement(imu.GetPitch(), dDeltaTime);
 		//PitchRate.SetSetpoint(PitchPos.GetOutput());
-		PitchRate.SetSetpoint(dPitch);
-		PitchRate.AddMeasurement(FilteredGyr.GetY(), dDeltaTime);
+		/*PitchRate.SetSetpoint(dPitch);
+		PitchRate.AddMeasurement(FilteredGyr.GetY(), dDeltaTime);*/
 
-		std::cout<<"PitchPotOutput:"<<PitchPos.GetOutput()<<std::endl;
-		std::cout<<"Motor1:"<<dThrottle - PitchRate.GetOutput()<<std::endl;
-		std::cout<<"Motor3:"<<dThrottle + PitchRate.GetOutput()<<std::endl;
+		std::cout<<"PitchPosOutput:"<<PitchPos.GetOutput()<<std::endl;
+		std::cout<<"Motor1:"<<dThrottle - PitchPos.GetOutput()<<std::endl;
+		std::cout<<"Motor3:"<<dThrottle + PitchPos.GetOutput()<<std::endl;
 
 		// Motor 1.speed = throttle - PitchRate.GetOutput()
 		// Motor 3.speed = throttle + PitchRate.GetOutput()
-		Motors.SetSpeed(1, dThrottle - PitchRate.GetOutput());
-		Motors.SetSpeed(3, dThrottle + PitchRate.GetOutput());
+		Motors.SetSpeed(1, dThrottle - PitchPos.GetOutput());
+		Motors.SetSpeed(3, dThrottle + PitchPos.GetOutput());
 
-		std::cerr<<dThrottle<<"\t"<<imu.GetPitch()<<"\t"<<FilteredGyr.GetY()<<"\t"<<PitchRate.GetOutput()<<"\t"<<dThrottle - PitchRate.GetOutput()<<std::endl;
+		std::cerr<<dThrottle<<"\t"<<imu.GetPitch()<<"\t"<<FilteredGyr.GetY()<<"\t"<<PitchPos.GetOutput()<<"\t"<<dThrottle - PitchPos.GetOutput()<<std::endl;
 		/*
 		// Logging to Stderr
 		// Throttle	Pitch	Roll	Yaw	[Actual P R Y]	[PitchPos-PID]	[RollPos-PID]	[YawPos-PID]
